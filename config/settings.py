@@ -24,9 +24,10 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS",
-                       default="127.0.0.1, localhost",
-                       cast=Csv())
+# ALLOWED_HOSTS = config("ALLOWED_HOSTS",
+#                        default="127.0.0.1, localhost",
+#                        cast=Csv())
+ALLOWED_HOSTS=['users-authentication-web-app.herokuapp.com']
 
 # Application definition
 
@@ -82,6 +83,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
